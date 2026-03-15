@@ -1,0 +1,33 @@
+diff --git a/node_modules/metro/package.json b/node_modules/metro/package.json
+index 1234567..abcdefg 100644
+--- a/node_modules/metro/package.json
++++ b/node_modules/metro/package.json
+@@ -6,7 +6,31 @@
+   "exports": {
+     ".": "./src/index.js",
+     "./package.json": "./package.json",
+-    "./private/*": "./src/*.js"
++    "./private/*": "./src/*.js",
++    "./src/lib/TerminalReporter": "./src/lib/TerminalReporter.js",
++    "./src/lib/splitBundleOptions": "./src/lib/splitBundleOptions.js",
++    "./src/HmrServer": "./src/HmrServer.js",
++    "./src/lib/createWebsocketServer": "./src/lib/createWebsocketServer.js",
++    "./src/DeltaBundler/Serializers/helpers/js": "./src/DeltaBundler/Serializers/helpers/js.js",
++    "./src/DeltaBundler/Serializers/baseJSBundle": "./src/DeltaBundler/Serializers/baseJSBundle.js",
++    "./src/DeltaBundler/Serializers/sourceMapGenerator": "./src/DeltaBundler/Serializers/sourceMapGenerator.js",
++    "./src/lib/bundleToString": "./src/lib/bundleToString.js",
++    "./src/lib/getGraphId": "./src/lib/getGraphId.js",
++    "./src/Server": "./src/Server.js",
++    "./src/shared/output/bundle": "./src/shared/output/bundle.js",
++    "./src/lib/countLines": "./src/lib/countLines.js",
++    "./src/lib/CountingSet": "./src/lib/CountingSet.js",
++    "./src/lib/getAppendScripts": "./src/lib/getAppendScripts.js",
++    "./src/DeltaBundler/Serializers/sourceMapString": "./src/DeltaBundler/Serializers/sourceMapString.js",
++    "./src/DeltaBundler/Graph": "./src/DeltaBundler/Graph.js",
++    "./src/Bundler/util": "./src/Bundler/util.js",
++    "./src/Assets": "./src/Assets.js",
++    "./src/ModuleGraph/worker/JsFileWrapping": "./src/ModuleGraph/worker/JsFileWrapping.js",
++    "./src/ModuleGraph/worker/collectDependencies": "./src/ModuleGraph/worker/collectDependencies.js",
++    "./src/ModuleGraph/worker/generateImportNames": "./src/ModuleGraph/worker/generateImportNames.js"
+   },
+   "repository": {

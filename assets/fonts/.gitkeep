@@ -1,0 +1,15 @@
+# Font Files Directory
+
+Place your font files here:
+- Poppins-Regular.ttf
+- Poppins-Medium.ttf
+- Poppins-SemiBold.ttf
+- Poppins-Bold.ttf
+- Inter-Regular.ttf
+- Inter-Medium.ttf
+- Montserrat-Regular.ttf
+- Montserrat-Bold.ttf
+
+You can download these fonts from:
+- Google Fonts: https://fonts.google.com/
+- Or use system fonts as fallback (app will work without custom fonts)
