@@ -347,6 +347,16 @@ export default function ActiveSharedSessionScreen() {
         clearCart();
         setTimeout(() => {
           if (sessionExitHandledRef.current) return;
+
+          // If the current screen is part of the payment flow (host is paying), do not redirect.
+          const state = navigation.getState();
+          if (state) {
+            const currentRoute = state.routes[state.index]?.name;
+            if (currentRoute === 'PaymentGateway' || currentRoute === 'PaymentQR' || currentRoute === 'PaymentSuccess') {
+              return;
+            }
+          }
+
           sessionExitHandledRef.current = true;
           if (ended) {
             navigation.replace('SessionReceipt', {

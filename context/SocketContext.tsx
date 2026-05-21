@@ -182,7 +182,8 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
         presentationStyle="overFullScreen"
         statusBarTranslucent
         onRequestClose={handleDecline}
-      >        <View style={styles.backdrop}>
+      >
+        <View style={styles.backdrop}>
           <BlurView intensity={BlurIntensity.medium} tint="dark" style={styles.blur}>
             <LinearGradient
               colors={[Colors.glass.medium, Colors.glass.dark]}

@@ -42,8 +42,8 @@ import {
   addItemToSharedSession,
   getSharedSession,
 } from '../../lib/services/sharedSession.service';
-import { useSocketOptional } from '../../context/SocketContext';
 import { playAddToCartChime } from '../../lib/sounds/uiChimes';
+import { getSocket } from '../../lib/services/socket.service';
 import { Colors, Typography, Spacing, DarkColors, LightColors } from '../../constants/theme';
 import AnimatedProgressBar from '../../components/budget/AnimatedProgressBar';
 import { formatLkr } from '../../lib/utils/currency';
@@ -81,7 +81,6 @@ export function ScanScreenContent({ onBack, closeAfterAdd, sharedSessionId }: Sc
   const personalCart = usePersonalCartOptional();
   const budget = useBudgetOptional();
   const auth = useAuthOptional();
-  const socket = useSocketOptional();
   const [permission, requestPermission] = useCameraPermissions();
   const [scanning, setScanning] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -283,7 +282,7 @@ export function ScanScreenContent({ onBack, closeAfterAdd, sharedSessionId }: Sc
         });
 
         const updated = await getSharedSession(sharedSessionId);
-        socket?.emitSessionUpdate(sharedSessionId, updated);
+        getSocket().emit('session:update', { sessionId: sharedSessionId, session: updated });
 
         void playAddToCartChime();
         setToastVisible(true);
@@ -346,7 +345,6 @@ export function ScanScreenContent({ onBack, closeAfterAdd, sharedSessionId }: Sc
     quantity,
     sharedSessionId,
     auth,
-    socket,
     cart,
     personalCart,
     budget,
